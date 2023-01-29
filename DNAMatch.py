@@ -32,7 +32,7 @@ def dna_match_topdown(DNA1, DNA2):
 
     array = [[0 for i in range(len(DNA2) + 1)] for i in range(len(DNA1) + 1)]  # Creates array.
 
-    return dna_match_topdown_helper(DNA1, dna1_len, dna2_len, array)
+    return dna_match_topdown_helper(DNA1, dna1_len, DNA2, dna2_len, array)
 
 
 def dna_match_topdown_helper(DNA1, DNA1_len, DNA2, DNA2_len, array):
