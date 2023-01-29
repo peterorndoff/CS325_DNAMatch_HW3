@@ -3,7 +3,6 @@
 # Assignment: #3
 # Description: Top/Down Dynamic Programming Approaches applied to DNA sequence identification.
 
-
 def dna_match_bottomup(DNA1, DNA2):
     dna1_size = len(DNA1)  # Size of Array 1
     dna2_size = len(DNA2)  # Size of Array 2
@@ -39,7 +38,7 @@ def dna_match_topdown_helper(DNA1, DNA1_len, DNA2, DNA2_len, array):
     if DNA1_len < 0 or DNA2_len < 0:
         array[DNA1_len][DNA2_len] = 0
 
-    elif DNA1[DNA1_len - 1] == DNA2[DNA2_len]:
+    elif DNA1[DNA1_len - 1] == DNA2[DNA2_len - 1]:
         array[DNA1_len][DNA2_len] = array[DNA1_len - 1][DNA2_len - 1] + 1
 
     else:
