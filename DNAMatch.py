@@ -29,9 +29,12 @@ def dna_match_topdown(DNA1, DNA2):
     dna1_len = len(DNA1)  # Size of Array 1
     dna2_len = len(DNA2)  # Size of Array 2
 
-    array = [[0 for i in range(len(DNA2) + 1)] for i in range(len(DNA1) + 1)]  # Creates array.
+    if dna1_len == 0 or dna2_len == 0:
+        return 0
 
-    return dna_match_topdown_helper(DNA1, dna1_len, DNA2, dna2_len, array)
+    else:
+        array = [[0 for i in range(len(DNA2) + 1)] for i in range(len(DNA1) + 1)]  # Creates array.
+        return dna_match_topdown_helper(DNA1, dna1_len, DNA2, dna2_len, array)
 
 
 def dna_match_topdown_helper(DNA1, DNA1_len, DNA2, DNA2_len, array):
@@ -58,3 +61,7 @@ def dna_match_topdown_helper(DNA1, DNA1_len, DNA2, DNA2_len, array):
                                   array[i][j - 1])  # Otherwise, take the max value of either side of array.
 
     return array[DNA1_len][DNA2_len]  # Return the bottom right value of the array.
+
+
+
+
