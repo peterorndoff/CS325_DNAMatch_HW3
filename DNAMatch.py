@@ -51,8 +51,7 @@ def dna_match_topdown_helper(DNA1, DNA1_len, DNA2, DNA2_len, array):
             if i == 0 or j == 0:  # Checks if either iterator is at the first index, if so, set array value to 0 at that position.
                 array[i][j] = 0
 
-            elif DNA1[i - 1] == DNA2[
-                j - 1]:  # Checks if sequence position in both indexes are equal, if so, update array.
+            elif DNA1[i - 1] == DNA2[j - 1]:  # Checks if sequence position in both indexes are equal, if so, update array.
                 array[i][j] = array[i - 1][j - 1] + 1
 
             else:
